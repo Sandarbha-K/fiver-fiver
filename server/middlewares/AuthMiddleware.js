@@ -2,11 +2,12 @@ import jwt from "jsonwebtoken";
 import cors from "cors";
 import  express  from "express";
 
-const app = express();
-app.use(cors());
+
 export const verifyToken = (req, res, next) => {
     // const token = req.headers.authorization?.split(" ")[1];
-   
+    const app = express();
+    app.use(cors());
+    
     const token=JSON.parse(req.cookies.jwt);
    if (!token) return res.status(401).send("You are not authenticated!");
    jwt.verify(token.jwt, process.env.JWT_KEY, async (err, payload) => {
