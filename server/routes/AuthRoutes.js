@@ -1,8 +1,12 @@
 import {Router} from "express";
+import  express  from "express";
+import cors from "cors"
 import {getUserInfo, login, setUserImage, setUserInfo, signUp} from "../controllers/AuthControllers.js";
 import { verifyToken } from "../middlewares/AuthMiddleware.js";
 import multer from "multer";
 
+const app = express();
+app.use(cors());
 const authRoutes=Router();
 const upload=multer({dest:"uploads/profiles/"});
 
