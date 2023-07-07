@@ -13,13 +13,13 @@ dotenv.config();
 
 const app = express();
 
-// const corsOptions = {
-//   origin: 'https://main--jocular-phoenix-905d4f.netlify.app',
-//   credentials: true,
-// };
+const corsOptions = {
+  origin: 'https://jocular-phoenix-905d4f.netlify.app',
+  credentials: true,
+};
 
-// Enable CORS with the specified options
-// app.use(cors(corsOptions));
+
+app.use(cors(corsOptions));
 const port=process.env.PORT;
 const origin=process.env.PUBLIC_URL;
 console.log({origin});
