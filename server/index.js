@@ -12,6 +12,7 @@ dotenv.config();
 
 
 const app = express();
+app.use(cors());
 const port=process.env.PORT;
 const origin=process.env.PUBLIC_URL;
 console.log({origin});
